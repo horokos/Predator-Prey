@@ -1,8 +1,8 @@
 # Predator-Prey
 
-##Opis projektu
+## Opis projektu
 cos
-##Kod
+## Kod
 ```
 cos
 ```
