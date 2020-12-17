@@ -1,7 +1,7 @@
 # Predator-Prey
 
 ## Opis projektu
-cos
+Prosty model agentowy predator-prey napisany od zera z wizualizacja
 ## Kod
 ```
 cos
