@@ -1,15 +1,21 @@
 import unittest
 from model import Model
 from agenci import Grass
+from agenci import Prey
 
 
 class TestModel(unittest.TestCase):
 
     def test_grass(self):
-        pass
+        grass = Grass((0, 0), 'model')
+        self.assertIsInstance(grass, Prey)
 
     def test_number_of_agents(self):
-        pass
+        model = Model(20, 10, 5, 0.2, 0.1)
+        model.collect_data()
+        prey_n=[i['preys'] for i in model.data]
+        predator_n=[i['predators'] for i in model.data]
+        self.assertEqual(15, int(predator_n[0])+int(prey_n[0]))
 
     def test_get_neightbourhood(self):
         pass
@@ -19,15 +25,26 @@ class TestModel(unittest.TestCase):
 
     def test_remove_from_grid(self):
         pass
+    def test_prey_energy(self):
+        prey = Prey((2,2), 'model')
+        prey.energy=10
+        for i in range(4):
+            prey.energy -=2
+        self.assertEqual(prey.energy, 2)
 
-    def test_remove_agent(self):
-        pass
+    def test_remove_agent(self): #nie wiem jak tego uzywac :<<
 
-    def test_collect_data(self):
+        #model = Model(20, 1, 1, 0.2, 0.1)
+        #model.collect_data()
+        #print(model.data)
+        #preys = [i['preys'] for i in model.data]
+        #model.remove_agent(preys)
+        #modezl.collect_data()
+        #print(model.data)
+
         pass
 
     def test_grass_step(self):
-        print('Running test_grass_step ...')
         grass = Grass((0, 0), 'model')
         grass.grown = False
         for i in range(14):
@@ -39,4 +56,4 @@ class TestModel(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(verbosity=2)
