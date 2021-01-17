@@ -2,7 +2,8 @@
 
 ## Opis projektu
 Prosty model agentowy predator-prey napisany od zera z wizualizacja
-## Kod
+## Kolorowanie
+Jak cos to kolorowanie sie robi tym co ci wyslalam i piszesz to w cmd
 ```
-cos
+pytest test.py -v
 ```
